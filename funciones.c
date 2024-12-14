@@ -44,7 +44,10 @@ void registrarLibros(struct Libro libros[], int i) {
         if (libros[i].anio < 0) {
             printf("El anio no puede ser negativo. Intente de nuevo.\n");
         }
-    } while (libros[i].anio < 0);
+        if (libros[i].anio > 2024) {
+            printf("El anio de publicacion no existe. Intente de nuevo.\n");
+        }
+    } while (libros[i].anio < 0,libros[i].anio > 2024);
     
     strcpy(libros[i].estado, "Disponible");
 }
